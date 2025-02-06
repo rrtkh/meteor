@@ -87,6 +87,7 @@ ${error.message}`);
 
 export class AndroidRunTarget extends CordovaRunTarget {
   constructor(isDevice) {
+    console.log("-----------TKH DEBUG------------ | isdevice: ", isDevice);
     super();
     this.platform = 'android';
     this.isDevice = isDevice;

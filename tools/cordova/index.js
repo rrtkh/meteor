@@ -13,7 +13,7 @@ export const CORDOVA_ARCH = "web.cordova";
 
 export const CORDOVA_PLATFORMS = ['ios', 'android'];
 
-const CORDOVA_ANDROID_VERSION = "12.0.1";
+const CORDOVA_ANDROID_VERSION = 'github:rrtkh/cordova-android#b3c954aae13bc6230896ce380f49c38f15e442fe';
 
 export const CORDOVA_DEV_BUNDLE_VERSIONS = {
   'cordova-lib': '10.0.0',
@@ -155,11 +155,11 @@ export function convertToGitUrl(url) {
   const match =
     url.match(/^https?:\/\/github.com\/(.+?)\/(.+?)\/tarball\/([0-9a-f]{40})/);
   if (match) {
-      const [, organization, repository, sha] = match;
+    const [, organization, repository, sha] = match;
     // Convert them to a Git URL
     return `https://github.com/${organization}/${repository}.git#${sha}`;
-  // We only support Git URLs with a SHA reference to guarantee repeatability
-  // of builds
+    // We only support Git URLs with a SHA reference to guarantee repeatability
+    // of builds
   } else if (/\.git#[0-9a-f]{40}/.test(url)) {
     return url;
   } else {
